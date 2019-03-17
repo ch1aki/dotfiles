@@ -57,6 +57,7 @@ set clipboard&
 set clipboard^=unnamedplus
 set visualbell t_bl=
 set noerrorbells
+set mouse=a
 
 " File type
 au BufRead,BufNewFile *.rb,*.jb,*.rbi  set filetype=ruby
@@ -143,3 +144,6 @@ augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
+
+" terminal mode
+tnoremap <ESC> <C-\><C-n>
