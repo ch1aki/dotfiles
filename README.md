@@ -5,7 +5,7 @@
 If you use macOS, you can execute follow command:
 
 ```
-$ curl -sfSL https://raw.githubusercontent.com/akito19/dotfiles/master/init.sh | sh
+$ curl -sfSL https://raw.githubusercontent.com/ch1aki/dotfiles/master/init.sh | sh
 ```
 
 *It doesn't work because of infinit loop in running this command...*
@@ -13,7 +13,7 @@ $ curl -sfSL https://raw.githubusercontent.com/akito19/dotfiles/master/init.sh |
 
 ## Manual Installation
 ```
-$ git clone https://github.com/akito19/dotfiles.git
+$ git clone https://github.com/ch1aki/dotfiles.git
 $ cd dotfiles
 $ ./init.sh
 ```
@@ -25,5 +25,5 @@ e.g. Changing `SSH` from `https`
 
 ```
 $ git remote -v  // confirmation current origin
-$ git remote set-url origin git@github.com:akito19/dotfiles.git
+$ git remote set-url origin git@github.com:ch1aki/dotfiles.git
 ```
