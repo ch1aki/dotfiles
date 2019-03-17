@@ -1,0 +1,69 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+  [plugins.build]
+    mac   = 'make'
+    linux = 'make'
+    unix  = 'gmake'
+
+[[plugins]]
+repo = 'basyura/unite-rails'
+on_ft = 'ruby'
+
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+# 補完
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# color scheme
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+# others
+[[plugins]]
+repo = 'Toruiwashita/git-switcher.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# 表示
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = "jiangmiao/auto-pairs"
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "scrooloose/nerdtree"
+
+[[plugins]]
+repo = "ryanoasis/vim-devicons"
+
+[[plugins]]
+repo = "jistr/vim-nerdtree-tabs"

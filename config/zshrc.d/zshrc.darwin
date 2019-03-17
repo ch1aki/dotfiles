@@ -1,0 +1,36 @@
+#
+# Configuration Darwin
+#
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+if [[ -d /Applications/MacVim.app ]]; then
+    PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# aliases for MacOS X
+alias v='nvim'
+alias ctags="`brew --prefix`/bin/ctags"
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export DATABASEDOTCOM_VERIFY_MODE=OpenSSL::SSL::VERIFY_NONE
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+# PostgreSQL configuration
+export PGDATA=/usr/local/var/postgres
+
+# https://github.com/puma/puma/issues/1421
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# nokogiri gem
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"

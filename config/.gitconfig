@@ -1,0 +1,43 @@
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[user]
+  name = Akito Kasai
+  email = kasai@akito19.com
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+[core]
+  excludesfile = ~/dotfiles/.gitignore
+[push]
+  default = simple
+[alias]
+  a = add
+  o = checkout
+  c = commit
+  p = push
+  pl = pull
+  # diff
+  dw = diff --color-words # 単語にも色つける
+  dc = diff --staged      # add との差分
+  # branch
+  br = branch
+  bm = branch --merged    # merge済みの branch を表示
+  # stash
+  stash = stash -u        # untracked なファイルも stash
+  # push
+  pf = push --force-with-lease
+  # log
+  plog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[diff]
+  compactionHeuristic = true
+[ghq]
+  root = ~/ghq
+  root = ~/go/src
