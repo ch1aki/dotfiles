@@ -2,9 +2,7 @@
   required = true
   clean = git media clean %f
   smudge = git media smudge %f
-[user]
-  name = Akito Kasai
-  email = kasai@akito19.com
+
 [color]
   status = auto
   diff = auto
@@ -15,6 +13,7 @@
 [push]
   default = simple
 [alias]
+  st = status
   a = add
   o = checkout
   c = commit
