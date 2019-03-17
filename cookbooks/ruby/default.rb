@@ -1,6 +1,5 @@
 node.reverse_merge!(
   rbenv: {
-    user: 'akito',
     global: '2.6.0',
     versions: %w[
       2.6.0
