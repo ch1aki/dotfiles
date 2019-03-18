@@ -2,8 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-  [plugins.build]
+repo = 'Shougo/vimproc.vim' [plugins.build]
     mac   = 'make'
     linux = 'make'
     unix  = 'gmake'
@@ -45,6 +44,24 @@ on_ft = 'toml'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'szw/vim-tags'
+
+[[plugins]]
+repo = 'rodjek/vim-puppet'
+
+# https://github.com/Shougo/dein.vim/issues/74
+[[plugins]]
+repo = 'junegunn/fzf'
+dir = '~/.fzf'
+do = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = ['fzf']
+rtp = ''
 
 # 表示
 [[plugins]]

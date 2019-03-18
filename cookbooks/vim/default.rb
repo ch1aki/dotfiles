@@ -8,6 +8,9 @@ case node[:platform]
 when 'darwin'
   package 'neovim/neovim/neovim'
   package 'global'
+  package 'universal-ctags/universal-ctags/universal-ctags' do
+    options '--HEAD'
+  end
 when 'ubuntu'
   package 'python-dev'
   package 'python-pip'

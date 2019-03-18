@@ -79,6 +79,7 @@ augroup END
 " 検索設定
 set wrapscan
 set hlsearch
+nnoremap <C-]> g<C-]> 
 
 " lightline.vim 設定諸々
 " https://github.com/itchyny/lightline.vim
