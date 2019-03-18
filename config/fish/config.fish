@@ -4,15 +4,6 @@ alias g git
 
 # direnv
 eval (direnv hook fish)
-
-# function key
-function fish_user_key_bindings
-  bind \cr 'peco_select_history (commandline -b)'	# search history
-  bind \c] peco_select_ghq_repository			# search git-repo
-end
-
-# direnv
-eval (direnv hook fish)
 set -x EDITOR vi
 
 # fisher bootstraping
