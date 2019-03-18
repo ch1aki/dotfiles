@@ -54,14 +54,11 @@ repo = 'rodjek/vim-puppet'
 # https://github.com/Shougo/dein.vim/issues/74
 [[plugins]]
 repo = 'junegunn/fzf'
-dir = '~/.fzf'
-do = './install --all'
-merged = 0
+build = './install --all'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = ['fzf']
-rtp = ''
 
 # 表示
 [[plugins]]
