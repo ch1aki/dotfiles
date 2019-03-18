@@ -148,3 +148,4 @@ augroup END
 
 " terminal mode
 tnoremap <ESC> <C-\><C-n>
+set termguicolors
