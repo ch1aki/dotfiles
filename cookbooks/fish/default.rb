@@ -20,17 +20,14 @@ directory "#{ENV['HOME']}/.config/fish/functions" do
   not_if "test -d #{ENV['HOME']}/.config/fish/functions"
 end
 
-link "#{ENV['HOME']}/.config/fish/config.fish" do
-  to "#{ENV['HOME']}/dotfiles/config/fish/config.fish"
-  force true
+ln '.config/fish/config.fish' do
+  source 'fish/config.fish'
 end
 
-link "#{ENV['HOME']}/.config/fish/functions/fish_prompt.fish" do
-  to "#{ENV['HOME']}/dotfiles/config/fish/functions/fish_prompt.fish"
-  force true
+ln '.config/fish/functions/fish_prompt.fish' do
+  source 'fish/functions/fish_prompt.fish'
 end
 
-link "#{ENV['HOME']}/.config/fish/fishfile" do
-  to "#{ENV['HOME']}/dotfiles/config/fish/fishfile"
-  force true
+ln '.config/fish/fishfile' do
+  source 'fish/fishfile'
 end
