@@ -1,5 +1,6 @@
 include_cookbook 'symboliclinks'
 include_cookbook 'git'
+include_cookbook 'fzf'
 include_cookbook 'vim'
 
 if ask 'install Ruby'
