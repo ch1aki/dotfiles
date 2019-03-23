@@ -8,9 +8,9 @@ if ask 'install Ruby'
   include_cookbook 'ruby'
 end
 
-#if ask 'install Python'
-#  include_cookbook 'python'
-#end
+if ask 'install Python'
+  include_cookbook 'python'
+end
 
 ln '.bash_profile'
 
