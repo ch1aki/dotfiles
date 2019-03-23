@@ -12,6 +12,9 @@ when 'darwin'
     options '--HEAD'
   end
 when 'ubuntu'
+  execute "add repository ppa:fish-shell/release-3" do
+    command 'apt-add-repository ppa:neovim-ppa/stable && apt-get update'
+  end
   package 'python-dev'
   package 'python-pip'
   package 'python3-dev'
