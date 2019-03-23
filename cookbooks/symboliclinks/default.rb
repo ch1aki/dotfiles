@@ -3,5 +3,6 @@ define :ln, source: nil do
   dotfile = File.join(ENV['HOME'], params[:name])
   link dotfile do
     to File.expand_path("../../../config/#{source}", __FILE__)
+    user node[:user]
   end
 end
