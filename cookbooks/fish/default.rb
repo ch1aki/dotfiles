@@ -6,6 +6,7 @@ when 'ubuntu'
 end
 
 package 'fish'
+package 'direnv'
 
 %w[fish fish/complications fish/conf.d fish/functions].each do |dir_name|
   directory "#{ENV['HOME']}/.config/#{dir_name}" do
