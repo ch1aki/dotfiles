@@ -1,3 +1,10 @@
+case node[:platform]
+when 'ubuntu'
+  execute "add repository ppa:fish-shell/release-3" do
+    command 'apt-add-repository ppa:fish-shell/release-3 && apt-get update'
+  end
+end
+
 package 'fish'
 
 %w[fish fish/complications fish/conf.d fish/functions].each do |dir_name|
