@@ -8,7 +8,7 @@ when 'ubuntu', 'arch'
 
   %w[tfenv terraform].each do |cmd|
     link "#{ENV['HOME']}/.tfenv/bin/#{cmd}" do
-      to '/usr/local/bin/#{cmd}'
+      to "/usr/local/bin/#{cmd}"
     end
   end
 end
