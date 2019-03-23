@@ -31,21 +31,6 @@ execute "go get hub" do
   not_if "test -d #{ENV['HOME']}/go/src/github.com/github/hub"
 end
 
-execute "go get ptmux" do
-  command "go get github.com/pocke/ptmux"
-  not_if "test -d #{ENV['HOME']}/go/src/github.com/pocke/ptmux"
-end
-
-execute "go get get" do
-  command "go get github.com/pocke/get"
-  not_if "test -d #{ENV['HOME']}/go/src/github.com/pocke/get"
-end
-
-directory "#{ENV['HOME']}/.config/ptmux" do
-  action :create
-  not_if "test -d #{ENV['HOME']}/.config/ptmux"
-end
-
 if node[:platform] == 'arch'
   include_cookbook 'yaourt'
   yaourt 'peco'
