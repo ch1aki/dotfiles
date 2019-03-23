@@ -28,35 +28,42 @@ ln '.vimrc'
 directory "#{ENV['HOME']}/.config/nvim" do
   action :create
   not_if "test -d #{ENV['HOME']}/.config/nvim"
+  user node[:user]
 end
 
 link "#{ENV['HOME']}/.config/nvim" do
   to "#{ENV['HOME']}/.vim"
+  user node[:user]
   force true
 end
 
 # https://neovim.io/doc/user/filetype.html
 directory "#{ENV['HOME']}/.config/nvim/after" do
   action :create
+  user node[:user]
   not_if "test -d #{ENV['HOME']}/.config/nvim/after"
 end
 
 link "#{ENV['HOME']}/.config/nvim/after/ftplugin" do
   to "#{ENV['HOME']}/.vim/after/ftplugin"
+  user node[:user]
   force true
 end
 
 link "#{ENV['HOME']}/.config/nvim/colors" do
   to "#{ENV['HOME']}/.vim/colors"
+  user node[:user]
   force true
 end
 
 link "#{ENV['HOME']}/.config/nvim/plugins" do
   to "#{ENV['HOME']}/.vim/plugins"
+  user node[:user]
   force true
 end
 
 link "#{ENV['HOME']}/.config/nvim/init.vim" do
   to "#{ENV['HOME']}/.vimrc"
+  user node[:user]
   force true
 end

@@ -4,6 +4,7 @@ when 'darwin'
 when 'ubuntu', 'arch'
   git "#{ENV['HOME']}/.tfenv" do
     repository 'https://github.com/tfutils/tfenv.git'
+    user node[:user]
   end
 
   %w[tfenv terraform].each do |cmd|

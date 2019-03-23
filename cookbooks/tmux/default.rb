@@ -11,4 +11,5 @@ ln '.tmux.conf'
 
 git "#{ENV['HOME']}/.tmux/plugins/tpm" do
   repository 'https://github.com/tmux-plugins/tpm.git'
+  user node[:user]
 end
