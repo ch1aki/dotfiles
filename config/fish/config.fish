@@ -20,3 +20,8 @@ end
 # golang
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
+
+# python
+set -gx PYENV_ROOT "$HOME/.pyenv"
+set -x PATH $PATH "$PYENV_ROOT/bin"
+status --is-interactive; and . (pyenv init - | psub)
