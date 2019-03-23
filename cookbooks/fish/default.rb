@@ -1,23 +1,11 @@
 package 'fish'
 
-directory "#{ENV['HOME']}/.config/fish" do
-  action :create
-  not_if "test -d #{ENV['HOME']}/.config/fish"
-end
-
-directory "#{ENV['HOME']}/.config/fish/complications" do
-  action :create
-  not_if "test -d #{ENV['HOME']}/.config/fish/complications"
-end
-
-directory "#{ENV['HOME']}/.config/fish/conf.d" do
-  action :create
-  not_if "test -d #{ENV['HOME']}/.config/fish/conf.d"
-end
-
-directory "#{ENV['HOME']}/.config/fish/functions" do
-  action :create
-  not_if "test -d #{ENV['HOME']}/.config/fish/functions"
+%w[fish fish/complications fish/conf.d fish/functions].each do |dir_name|
+  directory "#{ENV['HOME']}/.config/#{dir_name}" do
+    action :create
+    user node[:user]
+    not_if "test -d #{ENV['HOME']}/.config/#{dir_name}"
+  end
 end
 
 ln '.config/fish/config.fish' do
