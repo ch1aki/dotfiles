@@ -149,3 +149,7 @@ augroup END
 " terminal mode
 tnoremap <ESC> <C-\><C-n>
 set termguicolors
+
+" fzf
+command! -bang -nargs=? -complete=dir Files
+\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
