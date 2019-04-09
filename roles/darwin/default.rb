@@ -4,6 +4,7 @@ include_cookbook 'fzf'
 include_cookbook 'vim'
 include_cookbook 'golang'
 include_cookbook 'terraform'
+include_cookbook 'alacritty'
 
 if ask 'install Ruby'
   include_cookbook 'ruby'
