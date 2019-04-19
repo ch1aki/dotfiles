@@ -1,5 +1,6 @@
 # MItamae
 bin/mitamae*
+plugins/*/
 
 # Mac
 .DS_Store
