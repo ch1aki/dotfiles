@@ -4,7 +4,11 @@ when 'darwin'
   package 'pyenv'
 when 'ubuntu'
   package 'python3-pip'
+when 'arch'
+  package 'python3'
+end
 
+unless node[:platform] == "darwin"
   pyenv_root = "#{ENV['HOME']}/.pyenv"
   git "#{pyenv_root}" do
     repository "https://github.com/pyenv/pyenv.git"
