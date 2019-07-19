@@ -36,8 +36,8 @@ execute "go get hub" do
 end
 
 if node[:platform] == 'arch'
-  include_cookbook 'yaourt'
-  yaourt 'peco'
+  include_cookbook 'yay'
+  yay 'peco'
 else
   package 'peco'
 end
