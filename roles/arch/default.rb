@@ -1,6 +1,7 @@
 include_cookbook 'symboliclinks'
 include_cookbook 'git'
 include_cookbook 'vim'
+include_cookbook 'fzf'
 
 if ask 'install Ruby'
   include_cookbook 'ruby'
@@ -22,4 +23,4 @@ ln '.bash_profile'
 ln '.xprofile'
 
 include_cookbook 'tmux'
-include_cookbook 'zsh'
+include_cookbook 'fish'
