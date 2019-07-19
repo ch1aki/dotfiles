@@ -24,3 +24,4 @@ ln '.xprofile'
 
 include_cookbook 'tmux'
 include_cookbook 'fish'
+include_cookbook 'yay'

@@ -1,8 +1,8 @@
 # https://github.com/k0kubun/dotfiles/blob/master/cookbooks/yaourt/default.rb
-define :yaourt do
+define :yay do
   name = params[:name].shellescape
-  execute "yaourt -S --noconfirm #{name}" do
-    not_if "yaourt -Q #{name} || yaourt -Qg #{name}"
+  execute "yay -S --noconfirm #{name}" do
+    not_if "yay -Q #{name} || yay -Qg #{name}"
     if ENV['SUDO_USER']
       user ENV['SUDO_USER']
     end
