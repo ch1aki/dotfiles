@@ -19,6 +19,7 @@ end
 include_cookbook 'tmux'
 include_cookbook 'fish'
 include_cookbook 'alacritty'
+include_cookbook 'docker'
 
 yay 'ttf-cica' do
   action :install
