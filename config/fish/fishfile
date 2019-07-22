@@ -3,3 +3,4 @@ jethrokuan/fzf
 decors/fish-ghq
 kennethreitz/fish-pipenv
 ryotako/fish-vimcolor
+evanlucas/fish-kubectl-completions

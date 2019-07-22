@@ -1,6 +1,7 @@
 # alias
 alias l 'ls -l'
 alias g git
+alias k kubectl
 
 # direnv
 eval (direnv hook fish)
