@@ -4,17 +4,9 @@ include_cookbook 'fzf'
 include_cookbook 'vim'
 include_cookbook 'terraform'
 
-if ask 'install Ruby'
-  include_cookbook 'ruby'
-end
-
-if ask 'install Golang'
-  include_cookbook 'golang'
-end
-
-if ask 'install Python'
-  include_cookbook 'python'
-end
+include_cookbook 'ruby'
+include_cookbook 'golang'
+include_cookbook 'python'
 
 ln '.bash_profile'
 
