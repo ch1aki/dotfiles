@@ -1,4 +1,9 @@
-cask 'alacritty'
+case node[:platform]
+when 'darwin'
+  cask 'alacritty'
+when 'arch'
+  yay 'alacritty'
+end
 
 directory "#{ENV['HOME']}/.config/alacritty" do
   action :create

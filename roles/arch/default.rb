@@ -1,6 +1,8 @@
 include_cookbook 'symboliclinks'
+include_cookbook 'yay'
 include_cookbook 'git'
 include_cookbook 'vim'
+include_cookbook 'fzf'
 
 if ask 'install Ruby'
   include_cookbook 'ruby'
@@ -14,12 +16,11 @@ if ask 'install Python'
   include_cookbook 'python'
 end
 
-if ask 'install Rust'
-  include_cookbook 'rust'
-end
-
-ln '.bash_profile'
-ln '.xprofile'
-
 include_cookbook 'tmux'
-include_cookbook 'zsh'
+include_cookbook 'fish'
+include_cookbook 'alacritty'
+include_cookbook 'docker'
+
+yay 'ttf-cica' do
+  action :install
+end
