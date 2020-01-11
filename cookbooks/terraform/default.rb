@@ -7,7 +7,7 @@ when 'ubuntu', 'arch'
     user node[:user]
   end
 
-  %w[tfenv terraform].each do |cmd|
+  %w[tfenv].each do |cmd|
     link "/usr/local/bin/#{cmd}" do
       to "#{ENV['HOME']}/.tfenv/bin/#{cmd}"
     end
