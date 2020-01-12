@@ -1,3 +1,7 @@
+directory "#{ENV['HOME']}/bin" do
+  owner node[:user]
+end
+
 include_cookbook 'functions'
 include_cookbook 'symboliclinks'
 include_cookbook 'git'
