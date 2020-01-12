@@ -1,6 +1,9 @@
-[submodule "plugins/itamae-plugin-recipe-rbenv"]
-	path = plugins/itamae-plugin-recipe-rbenv
-	url = git@github.com:k0kubun/itamae-plugin-recipe-rbenv.git
 [submodule "plugins/itamae-plugin-recipe-docker"]
 	path = plugins/itamae-plugin-recipe-docker
 	url = https://github.com/k0kubun/itamae-plugin-recipe-docker.git
+[submodule "plugins/itamae-plugin-recipe-rbenv"]
+	path = plugins/itamae-plugin-recipe-rbenv
+	url = https://github.com/k0kubun/itamae-plugin-recipe-rbenv.git
+[submodule "plugins/itamae-plugin-resource-ghq"]
+	path = plugins/itamae-plugin-resource-ghq
+	url = https://github.com/k0kubun/itamae-plugin-resource-ghq.git
