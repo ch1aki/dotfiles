@@ -2,36 +2,7 @@ case node[:platform]
 when 'darwin'
   package 'go'
 when 'ubuntu'
-  # `golang-go` package installs TOO OLD version of go.
-  # So following `package` is commented out.
   package 'golang-go'
 when 'arch'
   package 'go'
 end
-
-# Make directory for golang
-directory "#{ENV['HOME']}/go/src/github.com/ch1aki" do
-  action :create
-  user node[:user]
-  not_if "test -d #{ENV['HOME']}/go/src/github.com/ch1aki"
-end
-
-directory "#{ENV['HOME']}/ghq/github.com/ch1aki" do
-  action :create
-  user node[:user]
-  not_if "test -d #{ENV['HOME']}/ghq/github.com/ch1aki"
-end
-
-execute "go get hub" do
-  command "go get github.com/github/hub"
-  user node[:user]
-  not_if "test -d #{ENV['HOME']}/go/src/github.com/github/hub"
-end
-
-if node[:platform] == 'arch'
-  include_cookbook 'yay'
-  yay 'peco'
-else
-  package 'peco'
-end
-ln '.peco'
