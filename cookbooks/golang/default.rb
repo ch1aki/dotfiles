@@ -16,13 +16,6 @@ directory "#{ENV['HOME']}/go/src/github.com/ch1aki" do
   not_if "test -d #{ENV['HOME']}/go/src/github.com/ch1aki"
 end
 
-# Install and make directory for ghq
-execute "go get ghq" do
-  command "go get github.com/motemen/ghq"
-  user node[:user]
-  not_if "test -d #{ENV['HOME']}/go/src/github.com/motemen/ghq"
-end
-
 directory "#{ENV['HOME']}/ghq/github.com/ch1aki" do
   action :create
   user node[:user]

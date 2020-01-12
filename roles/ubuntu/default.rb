@@ -3,6 +3,7 @@ include_cookbook 'git'
 include_cookbook 'fzf'
 include_cookbook 'vim'
 include_cookbook 'terraform'
+include_cookbook 'ghq'
 
 include_cookbook 'ruby'
 include_cookbook 'golang'
