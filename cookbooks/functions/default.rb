@@ -1,3 +1,7 @@
+node.reverse_merge!(
+  os: run_command('uname').stdout.strip.downcase,
+)
+
 define :github_binary, version: nil, repository: nil, archive: nil, binary_path: nil do
     cmd = params[:name]
     bin_path = "#{ENV['HOME']}/bin/#{cmd}"
