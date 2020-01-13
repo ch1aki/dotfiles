@@ -1,0 +1,4 @@
+command:
+  version:
+    exit-status: 0
+    exec: "go version" 

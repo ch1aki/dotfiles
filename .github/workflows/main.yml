@@ -4,12 +4,18 @@ on: [pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@2.0.0
     - name: Run install
       run: ./install.sh
+  checks:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: install goss
+      run: curl -fsSL https://goss.rocks/install | sh
+    - name: goss validate
+      run: /usr/local/bin/goss validate
