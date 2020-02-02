@@ -1,5 +1,6 @@
-fisherman/rbenv
 jethrokuan/fzf
 decors/fish-ghq
+sentriz/fish-pipenv
 kennethreitz/fish-pipenv
-ryotako/fish-vimcolor
+rbenv/fish-rbenv
+evanlucas/fish-kubectl-completions

@@ -1,6 +1,10 @@
 # alias
 alias l 'ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 alias g git
+alias k kubectl
 
 # direnv
 eval (direnv hook fish)
@@ -13,11 +17,10 @@ if not functions -q fisher
     fish -c fisher
 end
 
-# golang
-set -x GOPATH $HOME/go
-set -x PATH $PATH $GOPATH/bin
+# starship
+eval (starship init fish)
 
-# python
-set -gx PYENV_ROOT "$HOME/.pyenv"
-set -x PATH $PATH "$PYENV_ROOT/bin"
-status --is-interactive; and . (pyenv init - | psub)
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sugawara/y/google-cloud-sdk/path.fish.inc' ]; . '/Users/sugawara/y/google-cloud-sdk/path.fish.inc'; end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
