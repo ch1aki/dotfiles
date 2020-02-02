@@ -96,9 +96,10 @@ let g:lightline = {
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
         \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
+        \   'mode': 'LightlineMode',
+        \   'ale': 'ALEGetStatusLine'
         \ }
-        \ }
+        \}
 
 function! LightlineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
@@ -162,3 +163,11 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
+
+" ale
+" let g:ale_linters = {
+"\   'javascript': ['eslint'],
+"\}
+let g:ale_sign_column_always = 1
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+

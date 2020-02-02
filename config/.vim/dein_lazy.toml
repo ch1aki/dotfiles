@@ -21,3 +21,21 @@ hook_add = '''
 repo = 'Shougo/deoplete.nvim'
 if = 'has("nvim")'
 on_i = 1
+
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'basyura/unite-rails'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'rodjek/vim-puppet'
+on_ft = 'puppet'
+
