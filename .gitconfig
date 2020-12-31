@@ -1,0 +1,10 @@
+[alias]
+	st = status
+	br = branch
+	o = checkout
+	pl = pull
+[ghq]
+	root = ~/go/src
+	root = ~/src
+[include]
+	path = .gitconfig.local
