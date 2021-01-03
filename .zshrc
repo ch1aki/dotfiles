@@ -11,19 +11,19 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-
 ## system-wide environment settings for zsh(1)
 if [ -x /usr/libexec/path_helper ]; then
     PATH=''
     eval `/usr/libexec/path_helper -s`
 fi
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
-
-eval "$(rbenv init -)"
 
 function fzf-src () {
   local selected_dir=$(ghq list -p | fzf +m --query "$LBUFFER" --prompt="Sorce > ")
@@ -59,3 +59,5 @@ if [ -f '/Users/ch1aki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ch1aki/g
 if [ -f '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
