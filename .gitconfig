@@ -8,3 +8,5 @@
 	root = ~/src
 [include]
 	path = .gitconfig.local
+[core]
+	editor = vim
