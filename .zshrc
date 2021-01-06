@@ -51,6 +51,7 @@ prompt peepcodecustom "$"
 ## alias
 alias g=git
 alias k=kubectl
+alias bx="bundle exec"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ch1aki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ch1aki/google-cloud-sdk/path.zsh.inc'; fi
