@@ -64,5 +64,6 @@ if [ -f '/Users/ch1aki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ch1aki/g
 if [ -f '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
