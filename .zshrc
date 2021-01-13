@@ -25,6 +25,8 @@ export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+export EDITOR=nvim
+
 function fzf-src () {
   local selected_dir=$(ghq list -p | fzf +m --query "$LBUFFER" --prompt="Sorce > ")
   if [ -n "$selected_dir" ]; then
