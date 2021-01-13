@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " lsp
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
