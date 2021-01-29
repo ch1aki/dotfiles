@@ -23,6 +23,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+export EDITOR=nvim
+
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light migutw42/zsh-fzf-ghq
