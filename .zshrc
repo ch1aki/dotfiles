@@ -25,6 +25,7 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+zinit light migutw42/zsh-fzf-ghq
 
 # alias
 alias g=git
@@ -32,3 +33,6 @@ alias k=kubectl
 alias bx="bundle exec"
 alias kc=kubectx
 alias kn=kubens
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
