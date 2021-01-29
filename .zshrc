@@ -40,3 +40,8 @@ alias kn=kubens
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PATH
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+export PATH="$PATH:/opt/local/bin"
