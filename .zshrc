@@ -1,69 +1,24 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-# Customize to your needs...
-## system-wide environment settings for zsh(1)
-if [ -x /usr/libexec/path_helper ]; then
-    PATH=''
-    eval `/usr/libexec/path_helper -s`
-fi
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
 
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/Library/Python/3.8/bin"
-export PATH="$PATH:/opt/local/bin"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-export EDITOR=nvim
-
-function fzf-src () {
-  local selected_dir=$(ghq list -p | fzf +m --query "$LBUFFER" --prompt="Sorce > ")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N fzf-src
-bindkey '^g' fzf-src
-
-function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
-  CURSOR=$#BUFFER
-}
-zle -N select-history
-bindkey '^r' select-history
-
-## theme
-autoload -Uz promptinit
-promptinit
-prompt peepcodecustom "$"
-
-## alias
-alias g=git
-alias k=kubectl
-alias bx="bundle exec"
-alias kc=kubectx
-alias kn=kubens
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ch1aki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ch1aki/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ch1aki/google-cloud-sdk/completion.zsh.inc'; fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+### End of Zinit's installer chunk
