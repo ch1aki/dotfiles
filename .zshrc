@@ -43,6 +43,10 @@ alias kn=kubens
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# prompt
+PROMPT=$'%3~
+%(?.%F{green}$%f.%F{red}$%f) '
+
 # PATH
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
