@@ -25,3 +25,10 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+
+# alias
+alias g=git
+alias k=kubectl
+alias bx="bundle exec"
+alias kc=kubectx
+alias kn=kubens
