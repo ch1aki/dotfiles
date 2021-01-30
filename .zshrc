@@ -31,7 +31,7 @@ fi
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light migutw42/zsh-fzf-ghq
-zplugin light jonmosco/kube-ps1
+zinit light jonmosco/kube-ps1
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
