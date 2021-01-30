@@ -23,6 +23,11 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+if [ -x /usr/libexec/path_helper ]; then
+    PATH=''
+    eval `/usr/libexec/path_helper -s`
+fi
+
 export EDITOR=nvim
 
 zinit light zsh-users/zsh-autosuggestions
