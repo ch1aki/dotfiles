@@ -57,3 +57,8 @@ PROMPT=$'%3~ $(kube_ps1)
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
+
+# completion
+autoload -Uz compinit
+compinit
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
