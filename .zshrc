@@ -23,19 +23,22 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-if [ -x /usr/libexec/path_helper ]; then
-    PATH=''
-    eval `/usr/libexec/path_helper -s`
-fi
-
+# plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light migutw42/zsh-fzf-ghq
 zinit light jonmosco/kube-ps1
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# path_healper
+if [ -x /usr/libexec/path_helper ]; then
+    PATH=''
+    eval `/usr/libexec/path_helper -s`
+fi
+
+# PATH
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+export PATH="$PATH:/opt/local/bin"
 
 # alias
 alias g=git
@@ -43,9 +46,6 @@ alias k=kubectl
 alias bx="bundle exec"
 alias kc=kubectx
 alias kn=kubens
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # prompt
 autoload colors
@@ -58,12 +58,15 @@ function git_branch_current() {
 PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current) $(kube_ps1)
 %(?.%F{green}$%f.%F{red}$%f) '
 
-# PATH
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/Library/Python/3.8/bin"
-export PATH="$PATH:/opt/local/bin"
-
 # completion
 autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
