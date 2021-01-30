@@ -23,6 +23,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+setopt share_history
+
 # plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
