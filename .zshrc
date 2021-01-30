@@ -33,6 +33,7 @@ export EDITOR=nvim
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light migutw42/zsh-fzf-ghq
+zplugin light jonmosco/kube-ps1
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -49,7 +50,7 @@ alias kn=kubens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # prompt
-PROMPT=$'%3~
+PROMPT=$'%3~ $(kube_ps1)
 %(?.%F{green}$%f.%F{red}$%f) '
 
 # PATH
