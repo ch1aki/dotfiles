@@ -50,7 +50,14 @@ alias kn=kubens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # prompt
-PROMPT=$'%3~ $(kube_ps1)
+autoload colors
+colors
+
+function git_branch_current() {
+  git branch --show-current 2> /dev/null
+}
+
+PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current) $(kube_ps1)
 %(?.%F{green}$%f.%F{red}$%f) '
 
 # PATH
