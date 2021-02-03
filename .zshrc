@@ -50,6 +50,7 @@ alias k=kubectl
 alias bx="bundle exec"
 alias kc=kubectx
 alias kn=kubens
+alias vim=nvim
 
 # prompt
 autoload colors
