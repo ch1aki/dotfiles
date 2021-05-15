@@ -85,3 +85,5 @@ eval "$(rbenv init -)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# local
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
