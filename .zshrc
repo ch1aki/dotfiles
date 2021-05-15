@@ -37,6 +37,9 @@ if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
+# Homebrew
+ eval $(/opt/homebrew/bin/brew shellenv)
+
 # PATH
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
