@@ -46,6 +46,8 @@ export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+# local
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # alias
 alias g=git
@@ -87,6 +89,3 @@ eval "$(rbenv init -)"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# local
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
