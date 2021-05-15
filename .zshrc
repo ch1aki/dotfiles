@@ -65,11 +65,13 @@ PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current) $(kube_ps1)
 %(?.%F{green}$%f.%F{red}$%f) '
 
 # completion
+autoload -U bashcompinit
+bashcompinit
 autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 [[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer' aws
-[[ ~/google-cloud-sdk/completion.zsh.inc ]] && . ~/google-cloud-sdk/completion.zsh.inc
+[[ ~/google-cloud-sdk/completion.zsh.inc ]] && source ~/google-cloud-sdk/completion.zsh.inc
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
