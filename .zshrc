@@ -41,6 +41,8 @@ fi
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 ## Google Cloud SDK.
 if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then . ~/google-cloud-sdk/path.zsh.inc; fi
 
