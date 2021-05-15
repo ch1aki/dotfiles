@@ -20,6 +20,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rodjek/vim-puppet'
 
 " lsp
 Plug 'prabirshrestha/vim-lsp'
