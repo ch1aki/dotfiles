@@ -25,6 +25,9 @@ zinit light-mode for \
 
 setopt share_history
 
+# locale
+export LANG=ja_JP.UTF-8
+
 # plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
@@ -43,16 +46,19 @@ export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-## Google Cloud SDK.
-if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then . ~/google-cloud-sdk/path.zsh.inc; fi
-
 # alias
 alias g=git
 alias k=kubectl
 alias bx="bundle exec"
 alias kc=kubectx
 alias kn=kubens
+alias vi=vim
 alias vim=nvim
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 # prompt
 autoload colors
@@ -66,13 +72,13 @@ PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current) $(kube_ps1)
 %(?.%F{green}$%f.%F{red}$%f) '
 
 # completion
-autoload -U bashcompinit
-bashcompinit
 autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 [[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer' aws
-[[ ~/google-cloud-sdk/completion.zsh.inc ]] && source ~/google-cloud-sdk/completion.zsh.inc
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 
 # history
 HISTSIZE=50000
