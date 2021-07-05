@@ -40,11 +40,17 @@ if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
+# Homebrew
+ eval $(/opt/homebrew/bin/brew shellenv)
+
 # PATH
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# local
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # alias
 alias g=git
@@ -76,9 +82,8 @@ autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 [[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer' aws
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # history
 HISTSIZE=50000
@@ -91,6 +96,3 @@ eval "$(rbenv init -)"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# local
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local

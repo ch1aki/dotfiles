@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rodjek/vim-puppet'
@@ -38,7 +39,15 @@ syntax enable
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
+colorscheme onedark
+augroup TransparentBG
+  	autocmd!
+	autocmd Colorscheme * highlight Normal ctermbg=none
+	autocmd Colorscheme * highlight NonText ctermbg=none
+	autocmd Colorscheme * highlight LineNr ctermbg=none
+	autocmd Colorscheme * highlight Folded ctermbg=none
+	autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
+augroup END
 
 " 基本設定
 set noswapfile
