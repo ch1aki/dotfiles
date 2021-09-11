@@ -17,37 +17,28 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rodjek/vim-puppet'
-
-" lsp
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'mattn/vim-goimports'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 call plug#end()
 
-filetype plugin indent on
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" Coc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references) GoTo code navigation.
 
 " Color
-syntax enable
 set termguicolors
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-colorscheme onedark
-augroup TransparentBG
-  	autocmd!
-	autocmd Colorscheme * highlight Normal ctermbg=none
-	autocmd Colorscheme * highlight NonText ctermbg=none
-	autocmd Colorscheme * highlight LineNr ctermbg=none
-	autocmd Colorscheme * highlight Folded ctermbg=none
-	autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
-augroup END
+colorscheme tokyonight
+let g:tokyonight_style = "night"
+let g:tokyonight_transparent = "true"
+
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " 基本設定
 set noswapfile
@@ -81,7 +72,7 @@ augroup END
 " 検索設定
 set wrapscan
 set hlsearch
-nnoremap <C-]> g<C-]> 
+nnoremap <C-]> g<C-]>
 
 " lightline.vim 設定諸々
 " https://github.com/itchyny/lightline.vim
@@ -165,4 +156,3 @@ let g:go_highlight_extra_types = 1
 "\}
 let g:ale_sign_column_always = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-
