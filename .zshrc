@@ -41,13 +41,18 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 # Homebrew
- eval $(/opt/homebrew/bin/brew shellenv)
+if  [[ "$(uname -m)" == arm64 ]]; then
+	eval $(/opt/homebrew/bin/brew shellenv)
+elif [[ "$(uname -m)" == x86_64 ]]; then
+	eval $(/usr/local/bin/brew shellenv)
+fi
 
 # PATH
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 # local
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
@@ -82,8 +87,13 @@ autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 [[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer' aws
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+if  [[ "$(uname -m)" == arm64 ]]; then
+	source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+	source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+elif [[ "$(uname -m)" == x86_64 ]]; then
+	source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+	source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # history
 HISTSIZE=50000
@@ -91,8 +101,10 @@ SAVEHIST=100000
 setopt hist_ignore_dups
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# kubectx
+kubeoff

@@ -1,0 +1,14 @@
+{
+	"solargraph.useBundler": true,
+	"solargraph.bundlerPath": "/Users/sugawara/.rbenv/shims/bundle",
+	"languageserver": {
+		"intelephense": {
+			"command": "intelephense",
+			"args": ["--stdio"],
+			"filetypes": ["php"],
+			"initializationOptions": {
+				"storagePath": "/tmp/intelephense"
+			}
+		}
+	}
+}
