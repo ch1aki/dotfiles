@@ -1,6 +1,6 @@
 {
 	"solargraph.useBundler": true,
-	"solargraph.bundlerPath": "/Users/sugawara/.rbenv/shims/bundle",
+	"solargraph.bundlerPath": "~/.rbenv/shims/bundle",
 	"languageserver": {
 		"intelephense": {
 			"command": "intelephense",

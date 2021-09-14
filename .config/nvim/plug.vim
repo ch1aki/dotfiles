@@ -23,6 +23,7 @@ if has("nvim")
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 endif
 
 call plug#end()
