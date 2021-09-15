@@ -95,10 +95,6 @@ if has('nvim')
   endif
 endif
 
-" fzf
-command! -bang -nargs=? -complete=dir Files
-\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
 " Imports "{{{
 " ---------------------------------------------------------------------
 runtime ./plug.vim
