@@ -9,6 +9,9 @@ Plug 'Toruiwashita/git-switcher.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
@@ -24,6 +27,7 @@ if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'windwp/nvim-autopairs'
 endif
 
 call plug#end()
