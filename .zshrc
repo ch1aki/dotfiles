@@ -86,7 +86,7 @@ PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current) $(kube_ps1)
 autoload -Uz compinit
 compinit
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-[[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer' aws
+[[ /usr/local/bin/aws_zsh_completer ]] && complete -C '/usr/local/bin/aws_completer'
 if  [[ "$(uname -m)" == arm64 ]]; then
 	source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 	source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
