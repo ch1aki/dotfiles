@@ -1,14 +1,31 @@
 {
-	"solargraph.useBundler": true,
-	"solargraph.bundlerPath": "~/.rbenv/shims/bundle",
-	"languageserver": {
-		"intelephense": {
-			"command": "intelephense",
-			"args": ["--stdio"],
-			"filetypes": ["php"],
-			"initializationOptions": {
-				"storagePath": "/tmp/intelephense"
-			}
-		}
-	}
+        "solargraph.useBundler": true,
+        "solargraph.bundlerPath": "~/.rbenv/shims/bundle",
+        "languageserver": {
+                "intelephense": {
+                        "command": "intelephense",
+                        "args": ["--stdio"],
+                        "filetypes": ["php"],
+                        "initializationOptions": {
+                                "storagePath": "/tmp/intelephense"
+                        }
+                },
+                "puppet": {
+                        "command": "ruby",
+                        "args": ["~/src/github.com/lingua-pupuli/puppet-editor-services/puppet-languageserver","--stdio","--puppet-settings=--moduledir,/path/to/module/path"],
+                        "cwd": "~/src/github.com/lingua-pupuli/puppet-editor-services",
+                        "filetypes": ["puppet"],
+                        "rootPatterns": [".git/", "metadata.json"]
+                },
+                "terraform": {
+                        "command": "terraform-ls",
+                        "args": ["serve"],
+                        "filetypes": [
+                                "terraform",
+                                "tf"
+                        ],
+                        "initializationOptions": {},
+                        "settings": {}
+                }
+        }
 }
