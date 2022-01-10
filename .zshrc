@@ -56,7 +56,7 @@ elif [[ "$(uname -m)" == x86_64 ]]; then
 fi
 
 # PATH
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
