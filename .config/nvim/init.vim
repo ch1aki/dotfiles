@@ -1,6 +1,6 @@
 " init autocmd
 autocmd!
-" set script encoding
+"set script encoding
 scriptencoding utf-8
 
 " 文字コード, 改行コード
@@ -42,7 +42,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " lightline.vim
 let g:lightline = {
-        \ 'colorscheme': 'tokyonight',
+        \ 'colorscheme': 'onehalfdark',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -116,9 +116,13 @@ if exists("&termguicolors") && exists("&winblend")
   set winblend=0
   set wildoptions=pum
   set pumblend=5
-  set background=dark
-  " Use tokyonight
-  let g:tokyonight_style = "night"
-  let g:tokyonight_transparent = "true"
-  colorscheme tokyonight
 endif
+
+" colorscheme
+colorscheme onehalfdark
+highlight LineNr gui=NONE guifg=DarkGrey guibg=NONE
+highlight Normal gui=NONE guibg=000000 ctermbg=none
+highlight NonText gui=NONE ctermbg=none
+highlight Folded gui=NONE ctermbg=none
+highlight EndOfBuffer gui=NONE ctermbg=none
+

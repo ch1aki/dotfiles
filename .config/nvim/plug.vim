@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rodjek/vim-puppet'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 if has("nvim")
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
