@@ -31,9 +31,9 @@ if has('nvim')
 endif
 
 " File type
-au BufRead,BufNewFile *.rb,*.jb,*.rbi  set filetype=ruby
-au BufRead,BufNewFile *.go             set filetype=go
-au BufRead,BufNewFile *.py             set filetype=python
+au BufRead,BufNewFile *.rb,*.jb,*.rbi,Capfile,*.cap set filetype=ruby
+au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.py set filetype=python
 au BufNewFile,BufRead *.md set filetype=markdown
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
