@@ -104,6 +104,11 @@ if has("unix")
   if s:uname == "Darwin\n"
     runtime ./macos.vim
   endif
+
+  " Do WSL stuff
+  if system('uname -a | grep microsoft') != ''
+    runtime ./wsl.vim
+  endif
 endif
 
 runtime ./maps.vim
