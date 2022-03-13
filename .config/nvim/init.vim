@@ -126,3 +126,16 @@ highlight NonText gui=NONE ctermbg=none
 highlight Folded gui=NONE ctermbg=none
 highlight EndOfBuffer gui=NONE ctermbg=none
 
+" vim-go
+"" dsable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+
+"" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+"" run go imports on file save
+let g:go_fmt_command = "goimports"
+
+"" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
