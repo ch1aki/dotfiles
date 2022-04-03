@@ -20,7 +20,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rodjek/vim-puppet'
-Plug 'fatih/vim-go'
 
 if has("nvim")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
