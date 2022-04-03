@@ -3,7 +3,8 @@ if has("nvim")
 endif
 
 call plug#begin()
-
+" Appearance
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'itchyny/lightline.vim'
 Plug 'Toruiwashita/git-switcher.vim'
 Plug 'airblade/vim-gitgutter'
@@ -19,11 +20,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rodjek/vim-puppet'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'fatih/vim-go'
 
 if has("nvim")
-  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
