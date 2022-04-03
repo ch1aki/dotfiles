@@ -6,9 +6,13 @@ call plug#begin()
 " Appearance
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'itchyny/lightline.vim'
+
+" Git
 Plug 'Toruiwashita/git-switcher.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'iberianpig/tig-explorer.vim'
+
 " Filer
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
