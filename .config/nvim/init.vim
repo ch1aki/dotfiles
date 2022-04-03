@@ -86,13 +86,27 @@ colorscheme tokyonight
 "" dsable all linters as that is taken care of by coc.nvim
 let g:go_diagnostics_enabled = 0
 let g:go_metalinter_enabled = []
+""""""
+" coc
+""""""
+" TextEdit might fail if hidden is not set.
+set hidden
 
 "" don't jump to errors after metalinter is invoked
 let g:go_jump_to_error = 0
+" Give more space for displaying messages.
+set cmdheight=2
 
 "" run go imports on file save
 let g:go_fmt_command = "goimports"
+" default is 4000 ms
+set updatetime=300
 
 "" automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn
+set signcolumn=yes
 
