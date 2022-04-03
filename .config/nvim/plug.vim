@@ -22,6 +22,10 @@ Plug 'lambdalisue/glyph-palette.vim'
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Test
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
+
 if has("nvim")
   " Syntax highlight
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
