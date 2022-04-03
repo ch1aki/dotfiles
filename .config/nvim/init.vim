@@ -84,6 +84,14 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+" true color
+if exists("&termguicolors") && exists("&winblend")
+  syntax enable
+  set termguicolors
+  set winblend=0
+  set wildoptions=pum
+  set pumblend=5
+endif
 
 " For NeoVim
 if has('nvim')
@@ -114,22 +122,9 @@ endif
 runtime ./maps.vim
 "}}}
 
-" true color
-if exists("&termguicolors") && exists("&winblend")
-  syntax enable
-  set termguicolors
-  set winblend=0
-  set wildoptions=pum
-  set pumblend=5
-endif
-
 " colorscheme
-colorscheme onehalfdark
-highlight LineNr gui=NONE guifg=DarkGrey guibg=NONE
-highlight Normal gui=NONE guibg=000000 ctermbg=none
-highlight NonText gui=NONE ctermbg=none
-highlight Folded gui=NONE ctermbg=none
-highlight EndOfBuffer gui=NONE ctermbg=none
+let g:tokyonight_style = "night"
+colorscheme tokyonight
 
 " vim-go
 "" dsable all linters as that is taken care of by coc.nvim
@@ -144,3 +139,4 @@ let g:go_fmt_command = "goimports"
 
 "" automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
+
