@@ -8,10 +8,6 @@ nnoremap <C-]> g<C-]>
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
-" NERDTree
-nnoremap <silent><C-e> :NERDTreeTabsToggle<CR>
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-
 " terminal mode
 tnoremap <ESC> <C-\><C-n>
 
