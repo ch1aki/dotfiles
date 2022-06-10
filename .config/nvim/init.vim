@@ -34,6 +34,8 @@ au BufRead,BufNewFile *.rb,*.jb,*.rbi,Capfile,*.cap set filetype=ruby
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.py set filetype=python
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufRead,BufNewFile *.slim set filetype=slim
+au BufRead,BufNewFile *.pp set filetype=puppet
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
