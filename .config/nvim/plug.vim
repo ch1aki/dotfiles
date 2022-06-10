@@ -26,6 +26,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 
+" Syntax
+Plug 'slim-template/vim-slim'
+Plug 'rodjek/vim-puppet'
+
 if has("nvim")
   " Syntax highlight
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
