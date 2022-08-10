@@ -13,12 +13,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'iberianpig/tig-explorer.vim'
 
-" Filer
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -44,8 +38,10 @@ if has("nvim")
 
   " Fuzzy Finder
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-file-browser.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
 
   Plug 'windwp/nvim-autopairs'
 endif
