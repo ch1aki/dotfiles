@@ -83,21 +83,3 @@ runtime ./maps.vim
 let g:tokyonight_style = "night"
 colorscheme tokyonight
 
-""""""
-" coc
-""""""
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" default is 4000 ms
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn
-set signcolumn=yes
-
