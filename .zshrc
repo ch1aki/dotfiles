@@ -108,8 +108,8 @@ HISTSIZE=50000
 SAVEHIST=100000
 setopt hist_ignore_dups
 
-# rbenv
-eval "$(rbenv init -)"
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
