@@ -76,6 +76,4 @@ runtime ./maps.vim
 "}}}
 
 " colorscheme
-let g:tokyonight_style = "night"
-colorscheme tokyonight
-
+colorscheme onehalfdark
