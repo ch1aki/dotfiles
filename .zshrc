@@ -21,8 +21,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-setopt share_history
-
 # locale
 export LANG=ja_JP.UTF-8
 
@@ -101,6 +99,7 @@ fi
 HISTSIZE=50000
 SAVEHIST=100000
 setopt hist_ignore_dups
+setopt share_history
 
 # asdf
 case ${OSTYPE} in
