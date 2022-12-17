@@ -4,8 +4,9 @@ endif
 
 call plug#begin()
 " Appearance
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'itchyny/lightline.vim'
+Plug 'tribela/vim-transparent'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Git
 Plug 'Toruiwashita/git-switcher.vim'
@@ -23,6 +24,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " Test
 Plug 'janko-m/vim-test'
@@ -34,7 +37,7 @@ Plug 'rodjek/vim-puppet'
 
 if has("nvim")
   " Syntax highlight
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'commit': '3b790e7657d6bb54245b5a70c2ae9355713d0b0c' }
 
   " Fuzzy Finder
   Plug 'nvim-telescope/telescope.nvim'
