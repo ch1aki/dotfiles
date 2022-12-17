@@ -45,6 +45,10 @@ elif [[ "$(uname -m)" == x86_64 ]]; then
 	eval $(/usr/local/bin/brew shellenv)
 fi
 
+function homebrew_dir() {
+  $(dirname $(dirname $(which brew)))
+}
+
 # PATH
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
@@ -99,7 +103,14 @@ SAVEHIST=100000
 setopt hist_ignore_dups
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+case ${OSTYPE} in
+        darwin*)
+                . $(homebrew_dir)/opt/asdf/libexec/asdf.sh
+                ;;
+        linux*)
+                . $HOME/.asdf/asdf.sh
+                ;;
+esac
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
