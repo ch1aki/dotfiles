@@ -41,14 +41,10 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
-" true color
-if exists("&termguicolors") && exists("&winblend")
-  syntax enable
-  set termguicolors
-  set winblend=0
-  set wildoptions=pum
-  set pumblend=5
-endif
+syntax enable
+set termguicolors
+set winblend=30
+set pumblend=30
 
 " For NeoVim
 if has('nvim')
