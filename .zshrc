@@ -38,7 +38,7 @@ fi
 
 # Homebrew
 function homebrew_dir() {
-  $(dirname $(dirname $(which brew)))
+  echo $(dirname $(dirname $(which brew)))
 }
 
 # PATH
