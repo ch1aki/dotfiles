@@ -30,6 +30,12 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light migutw42/zsh-fzf-ghq
 zinit light jonmosco/kube-ps1
 
+# history
+HISTSIZE=50000
+SAVEHIST=100000
+setopt hist_ignore_dups
+setopt share_history
+
 # path_healper
 if [ -x /usr/libexec/path_helper ]; then
     PATH=''
@@ -88,12 +94,6 @@ elif [[ "$(uname -m)" == x86_64 ]]; then
 	source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 	source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
-
-# history
-HISTSIZE=50000
-SAVEHIST=100000
-setopt hist_ignore_dups
-setopt share_history
 
 # asdf
 case ${OSTYPE} in
