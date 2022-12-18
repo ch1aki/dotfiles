@@ -36,12 +36,6 @@ SAVEHIST=100000
 setopt hist_ignore_dups
 setopt share_history
 
-# path_healper
-if [ -x /usr/libexec/path_helper ]; then
-    PATH=''
-    eval `/usr/libexec/path_helper -s`
-fi
-
 # Homebrew
 function homebrew_dir() {
   echo $(dirname $(dirname $(which brew)))
