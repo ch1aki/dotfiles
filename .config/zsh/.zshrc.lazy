@@ -1,0 +1,60 @@
+# alias
+alias g=git
+alias k=kubectl
+alias bx="bundle exec"
+alias kc=kubectx
+alias kn=kubens
+alias vi=vim
+alias vim=nvim
+
+case "$OSTYPE" in
+    darwin*)
+        ENV_OS="(macos|darwin)"
+        (( ${+commands[gdate]} )) && alias date='gdate'
+        (( ${+commands[gsed]} )) && alias sed='gsed'
+        (( ${+commands[ggrep]} )) && alias grep='ggrep'
+        (( ${+commands[gfind]} )) && alias find='gfind'
+        (( ${+commands[gxargs]} )) && alias xargs='gxargs'
+    ;;
+    linux*)
+        ENV_OS="linux"
+    ;;
+esac
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# kubectl
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# awscli
+[[ $(homebrew_dir)/bin/aws_completer ]] && complete -C "$(homebrew_dir)/bin/aws_completer" aws
+
+# gcloud
+if  [[ $(homebrew_dir)/Caskroom/google-cloud-sdk ]]; then
+	source "$(homebrew_dir)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+	source "$(homebrew_dir)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# zsh plugins
+zinit wait lucid blockf light-mode for \
+        atload'async_init' @'mafredri/zsh-async' \
+        @'zsh-users/zsh-autosuggestions' \
+        @'zdharma-continuum/fast-syntax-highlighting' \
+        @'migutw42/zsh-fzf-ghq' \
+        @'jonmosco/kube-ps1'
+
+# programs
+zinit wait lucid light-mode as'program' from'gh-r' for \
+    pick'delta*/delta'  @'dandavison/delta' \
+
+# asdf
+__asdf_atload() {
+    export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+    export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
+}
+zinit wait lucid light-mode for \
+    atpull'asdf plugin update --all' \
+    atload'__asdf_atload' \
+    @'asdf-vm/asdf'
+
