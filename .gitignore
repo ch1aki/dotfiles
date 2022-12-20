@@ -1,0 +1,5 @@
+*.local
+local.*
+!local.*.sample
+*.zwc
+.zcomp*
