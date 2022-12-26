@@ -31,11 +31,8 @@ typeset -U path
 typeset -U fpath
 
 path=(
-        "$PATH:${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"(N-/)
-        "$PATH:$HOME/Library/Python/3.8/bin"(N-/)
-        "$PATH:/opt/local/bin"(N-/)
-        "${KREW_ROOT:-$HOME/.krew}/bin:$PATH"(N-/)
-        "$HOME/.rbenv/bin:$PATH"(N-/)
+        "$XDG_DATA_HOME/aquaproj-aqua/bin"(N-/)
+        "$HOME/.krew/bin"(N-/)
         "$path[@]"
 )
 
