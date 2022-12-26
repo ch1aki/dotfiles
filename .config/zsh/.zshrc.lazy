@@ -14,6 +14,15 @@ case "$OSTYPE" in
         (( ${+commands[ggrep]} )) && alias grep='ggrep'
         (( ${+commands[gfind]} )) && alias find='gfind'
         (( ${+commands[gxargs]} )) && alias xargs='gxargs'
+
+        # homebrew
+        if  [[ "$(uname -m)" == arm64 ]]; then
+	        eval $(/opt/homebrew/bin/brew shellenv)
+        elif [[ "$(uname -m)" == x86_64 ]]; then
+	        eval $(/usr/local/bin/brew shellenv)
+fi
+
+
     ;;
 esac
 
@@ -88,3 +97,9 @@ zinit wait lucid light-mode as'program' from'gh-r' for \
     atload'__navi_atload' \
     @'denisidoro/navi'
 
+### tmux
+ide() {
+        tmux split-window -v -p 30
+        tmux split-window -h -p 66
+        tmux split-window -h -p 50
+}
