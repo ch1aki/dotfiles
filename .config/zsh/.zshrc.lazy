@@ -69,6 +69,11 @@ zinit wait lucid light-mode as'program' from'gh-r' for \
     atclone'./gh*/bin/gh completion -s zsh >_gh' atpull'%atclone' \
     @'cli/cli'
 
+### ghq ###
+zinit wait lucid light-mode as'program' from'gh-r' for \
+    pick'ghq*/ghq' \
+    @'x-motemen/ghq'
+
 ### exa ###
 __exa_atload() {
     alias ls='exa --group-directories-first'
