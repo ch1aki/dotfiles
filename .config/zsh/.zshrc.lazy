@@ -36,7 +36,7 @@ esac
 [[ $(homebrew_dir)/bin/aws_completer ]] && complete -C "$(homebrew_dir)/bin/aws_completer" aws
 
 # gcloud
-if  [[ $(homebrew_dir)/Caskroom/google-cloud-sdk ]]; then
+if  [[ -f $(homebrew_dir)/Caskroom/google-cloud-sdk ]]; then
 	source "$(homebrew_dir)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 	source "$(homebrew_dir)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
