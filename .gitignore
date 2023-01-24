@@ -2,4 +2,3 @@
 local.*
 !local.*.sample
 *.zwc
-.zcomp*
