@@ -74,8 +74,9 @@ function git_branch_current() {
   git branch --show-current 2> /dev/null
 }
 
-PROMPT=$'%{$fg[blue]%}%3~ %{$fg[magenta]%}$(git_branch_current)
-%(?.%F{green}$%f.%F{red}$%f) '
+# pure theme
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
 # completion
 autoload bashcompinit && bashcompinit
