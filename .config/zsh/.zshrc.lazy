@@ -53,15 +53,12 @@ zinit wait lucid blockf light-mode for \
 zinit wait lucid light-mode as'program' from'gh-r' for \
     pick'delta*/delta'  @'dandavison/delta'
 
-# asdf
-__asdf_atload() {
-    export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
-    export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
-}
-zinit wait lucid light-mode for \
-    atpull'asdf plugin update --all' \
-    atload'__asdf_atload' \
-    @'asdf-vm/asdf'
+# rtx
+zinit wait lucid light-mode as'program' bpick'rtx-*.tar.gz' from'gh-r' for \
+    pick'rtx/bin/rtx' \
+    atclone'./rtx/bin/rtx complete --shell zsh >_rtx' atpull'%atclone' \
+    atload'eval "$(rtx activate zsh)"' \
+    @'jdxcode/rtx'
 
 ### GitHub CLI ###
 zinit wait lucid light-mode as'program' from'gh-r' for \
