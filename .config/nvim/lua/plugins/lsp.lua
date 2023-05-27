@@ -81,7 +81,6 @@ return {
       keymap("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>")
       keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
       keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-      keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
     end,
     dependencies = {
       {"nvim-tree/nvim-web-devicons"},
