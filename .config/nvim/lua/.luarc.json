@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/usr/local/Cellar/neovim/HEAD-e3e6fad/share/nvim/runtime/lua",
+        "/Users/sugawara/.config/nvim/lua",
+        "/Users/sugawara/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/1dd28a5c",
+        "/Users/sugawara/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/1e871a93"
+    ]
+}
