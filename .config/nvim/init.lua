@@ -23,6 +23,8 @@ vim.opt.mouse='a'
 
 vim.opt.backupskip='/tmp/*,/private/tmp/*'
 
+vim.opt.clipboard = "unnamedplus"
+
 -- bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
