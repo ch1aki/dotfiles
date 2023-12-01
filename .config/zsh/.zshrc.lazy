@@ -1,6 +1,5 @@
 # alias
 alias g=git
-alias k=kubectl
 alias bx="bundle exec"
 alias kc=kubectx
 alias kn=kubens
@@ -27,10 +26,7 @@ fi
 esac
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# kubectl
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+zinit pack"binary+keys" for fzf
 
 # awscli
 [[ $(homebrew_dir)/bin/aws_completer ]] && complete -C "$(homebrew_dir)/bin/aws_completer" aws
@@ -58,7 +54,7 @@ zinit wait lucid light-mode as'program' bpick'rtx-*.tar.gz' from'gh-r' for \
     pick'rtx/bin/rtx' \
     atclone'./rtx/bin/rtx complete --shell zsh >_rtx' atpull'%atclone' \
     atload'eval "$(rtx activate zsh)"' \
-    @'jdxcode/rtx'
+    @'jdx/rtx'
 
 ### GitHub CLI ###
 zinit wait lucid light-mode as'program' from'gh-r' for \
