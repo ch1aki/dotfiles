@@ -49,12 +49,12 @@ zinit wait lucid blockf light-mode for \
 zinit wait lucid light-mode as'program' from'gh-r' for \
     pick'delta*/delta'  @'dandavison/delta'
 
-# rtx
-zinit wait lucid light-mode as'program' bpick'rtx-*.tar.gz' from'gh-r' for \
-    pick'rtx/bin/rtx' \
-    atclone'./rtx/bin/rtx complete --shell zsh >_rtx' atpull'%atclone' \
-    atload'eval "$(rtx activate zsh)"' \
-    @'jdx/rtx'
+# mise
+zinit wait lucid light-mode as'program' bpick'mise-*.tar.gz' from'gh-r' for \
+    pick'mise/bin/mise' \
+    atclone'./mise/bin/mise complete --shell zsh >_mise' atpull'%atclone' \
+    atload'eval "$(mise activate zsh)"' \
+    @'jdx/mise'
 
 ### GitHub CLI ###
 zinit wait lucid light-mode as'program' from'gh-r' for \
